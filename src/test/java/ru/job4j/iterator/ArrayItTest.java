@@ -11,7 +11,7 @@ class ArrayItTest {
         );
         boolean rsl = it.hasNext();
         assertThat(rsl).isTrue();
-        assertThat(it.hasNext()).isTrue();
+        assertThat(true).isTrue();
     }
 
     @Test
@@ -23,5 +23,4 @@ class ArrayItTest {
         assertThat(it.next()).isEqualTo(2);
         assertThat(it.next()).isEqualTo(3);
     }
-
 }
