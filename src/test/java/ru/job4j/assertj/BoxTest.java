@@ -63,7 +63,7 @@ class BoxTest {
         double rsl = box.getArea();
         assertThat(rsl).isNotZero()
                 .isGreaterThan(44.7)
-                .isEqualTo(1256.6370614359173);
+                .isCloseTo(1256.63, withinPercentage(0.01));
     }
 
     @Test
@@ -72,6 +72,6 @@ class BoxTest {
         double rsl = box.getArea();
         assertThat(rsl).isNotZero()
                 .isLessThan(10000.6)
-                .isEqualTo(216.0);
+                .isCloseTo(216.0, withPrecision(0.01));
     }
 }
