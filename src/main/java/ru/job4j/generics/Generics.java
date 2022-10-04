@@ -5,11 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Generics {
-    /**
-     * gen.printBoundedWildCard(first);
-     * gen.printLowerBoundedWildCard(third);
-     * @param args
-     */
+
     public static void main(String[] args) {
         Generics gen = new Generics();
         List<Animal> first = new ArrayList<>();
@@ -24,19 +20,24 @@ public class Generics {
         gen.printObject(third);
         System.out.println();
 
+        /*
+        gen.printBoundedWildCard(first);
+        */
         gen.printBoundedWildCard(second);
         gen.printBoundedWildCard(third);
         System.out.println();
 
         gen.printLowerBoundedWildCard(first);
         gen.printLowerBoundedWildCard(second);
+        /*
+        gen.printLowerBoundedWildCard(third);
+        */
     }
 
-    /**
-     * public void printObject(List<Object> list) {
-     * for (Iterator<Object> it = list.iterator(); it.hasNext();) {
-     * @param list
-     */
+      /*
+      public void printObject(List<Object> list) {
+          for (Iterator<Object> it = list.iterator(); it.hasNext();) {
+      */
       public void printObject(List<?> list) {
           for (Iterator<?> it = list.iterator(); it.hasNext();) {
             Object next = it.next();
@@ -44,11 +45,10 @@ public class Generics {
         }
     }
 
-    /**
-     * public void printBoundedWildCard(List<Predator> list) {
-     * for (Iterator<Predator> it = list.iterator(); it.hasNext();)
-     * @param list
-     */
+      /*
+      public void printBoundedWildCard(List<Predator> list) {
+          for (Iterator<Predator> it = list.iterator(); it.hasNext();)
+      */
       public void printBoundedWildCard(List<? extends Predator> list) {
           for (Iterator<? extends Predator> it = list.iterator(); it.hasNext();) {
             Object next = it.next();
@@ -56,11 +56,10 @@ public class Generics {
         }
     }
 
-    /**
-     * public void printLowerBoundedWildCard(List<Predator> list) {
-     * for (Iterator<Predator> it = list.iterator(); it.hasNext();) {
-     * @param list
-     */
+      /*
+      public void printLowerBoundedWildCard(List<Predator> list) {
+          for (Iterator<Predator> it = list.iterator(); it.hasNext();) {
+      */
       public void printLowerBoundedWildCard(List<? super Predator> list) {
           for (Iterator<? super Predator> it = list.iterator(); it.hasNext();) {
             Object next = it.next();
