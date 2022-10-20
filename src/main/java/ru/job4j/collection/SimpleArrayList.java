@@ -80,6 +80,6 @@ public class SimpleArrayList<T> implements SimpleList<T> {
 
     public T[] enlarge(T[] container) {
         return container.length == 0 ? Arrays.copyOf(container, 2)
-                : Arrays.copyOf(container, (container.length - 1) * 2);
+                : Arrays.copyOf(container, container.length * 2);
     }
 }
