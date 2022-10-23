@@ -6,30 +6,29 @@ public class SimpleLinkedList<E> implements LinkedList<E> {
 
     private int modCount;
     private int size;
-    private Node<E> first;
-    private Node<E> last;
+    private Node<E> head = null;
 
     private static class Node<E> {
-        E item;
-        Node<E> next;
-        Node<E> prev;
+        private E data;
+        private Node<E> next;
 
-        Node(Node<E> prev, E element, Node<E> next) {
-            this.item = element;
-            this.next = next;
-            this.prev = prev;
+        public Node(E data) {
+            this.data = data;
         }
     }
 
     @Override
     public void add(E value) {
-        final Node<E> l = last;
-        final Node<E> newNode = new Node<>(l, value, null);
-        last = newNode;
-        if (l == null) {
-            first = newNode;
+        Node<E> newNode = new Node<E>(value);
+        if (size == 0) {
+            newNode.next = head;
+            head = newNode;
         } else {
-            l.next = newNode;
+            Node<E> first = head;
+            while (first.next != null) {
+                first = first.next;
+            }
+            first.next = newNode;
         }
         size++;
         modCount++;
@@ -38,19 +37,11 @@ public class SimpleLinkedList<E> implements LinkedList<E> {
     @Override
     public E get(int index) {
         Objects.checkIndex(index, size);
-        Node<E> found;
-        if (index < size / 2) {
-            found = first;
-            for (int i = 0; i < index; i++) {
+        Node<E> found = head;
+        for (int i = 0; i < index; i++) {
                 found = found.next;
             }
-        } else {
-            found = last;
-            for (int i = size - 1; i > index; i--) {
-                found = found.prev;
-            }
-        }
-        return found.item;
+        return found.data;
     }
 
     @Override
@@ -58,7 +49,7 @@ public class SimpleLinkedList<E> implements LinkedList<E> {
 
         return new Iterator<E>() {
 
-            private Node<E> newNode = first;
+            private Node<E> newNode = head;
             final int expectedModCount = modCount;
 
             @Override
@@ -76,7 +67,7 @@ public class SimpleLinkedList<E> implements LinkedList<E> {
                 }
                 Node<E> found = newNode;
                 newNode = newNode.next;
-                return found.item;
+                return found.data;
             }
         };
     }
