@@ -4,11 +4,24 @@ public class SimpleStack<T> {
 
     private ForwardLinked<T> linked = new ForwardLinked<T>();
 
+    private int size;
+
+    public int getSize() {
+        return size;
+    }
+
+    public boolean isEmpty() {
+        return getSize() == 0;
+    }
+
     public T pop() {
-        return linked.deleteFirst();
+        var rsl = linked.deleteFirst();
+        size--;
+        return rsl;
     }
 
     public void push(T value) {
         linked.addFirst(value);
+        size++;
     }
 }
