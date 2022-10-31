@@ -15,20 +15,19 @@ public class SimpleQueue<T> {
         if (in.isEmpty()) {
             throw new NoSuchElementException();
         }
-        return in.pop();
+        if (out.isEmpty()) {
+            while (!in.isEmpty()) {
+                out.push(in.pop());
+            }
+        }
+        return out.pop();
     }
 
     /**
-     * enQueue
-     * @param value, помещает значение в конец
-     */
+     //     * enQueue
+     //     * @param value, помещает значение в конец
+     //     */
     public void push(T value) {
-        while (!in.isEmpty()) {
-            out.push(in.pop());
-        }
         in.push(value);
-        while (!out.isEmpty()) {
-            in.push(out.pop());
-        }
     }
 }
