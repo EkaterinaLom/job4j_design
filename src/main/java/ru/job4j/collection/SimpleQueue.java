@@ -24,9 +24,9 @@ public class SimpleQueue<T> {
     }
 
     /**
-     //     * enQueue
-     //     * @param value, помещает значение в конец
-     //     */
+     * enQueue
+     * @param value, помещает значение в конец
+     */
     public void push(T value) {
         in.push(value);
     }
