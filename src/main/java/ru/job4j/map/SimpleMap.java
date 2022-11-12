@@ -16,24 +16,29 @@ public class SimpleMap<K, V> implements Map<K, V> {
     }
 
     private boolean putEntry(MapEntry<K, V> entry) {
-        boolean result;
-        var index = hash(entry.key);
+        boolean result = true;
+        var index = indexFor(hash(entry.key));
         if (table[index] != null) {
-            return false;
+            result = false;
         } else {
             table[index] = entry;
-            result = true;
             count++;
             modCount++;
         }
         if (count == (int) (capasity * LOAD_FACTOR)) {
             expand();
+            modCount++;
         }
         return result;
     }
 
     private int hash(Object key) {
-        return (key == null) ? 0 : key.hashCode() % capasity;
+        int h;
+        return key == null ? 0 : key.hashCode() ^ (key.hashCode() >>> capasity);
+    }
+
+    private int indexFor(int hash) {
+        return hash & capasity - 1;
     }
 
     /**
@@ -54,7 +59,7 @@ public class SimpleMap<K, V> implements Map<K, V> {
 
     @Override
     public V get(K key) {
-        int index = hash(key);
+        int index = indexFor(hash(key));
         var entry = table[index];
         return entry == null ? null : entry.value;
     }
@@ -62,7 +67,7 @@ public class SimpleMap<K, V> implements Map<K, V> {
     @Override
     public boolean remove(K key) {
         boolean result;
-        int index = hash(key);
+        int index = indexFor(hash(key));
         if (table[index] == null) {
             result = false;
         } else {
@@ -83,25 +88,17 @@ public class SimpleMap<K, V> implements Map<K, V> {
         return new Iterator<K>() {
 
             private final int expectedModCount = modCount;
-            private List<K> keys;
             private int index = 0;
-
-            {
-                var keySet = new HashSet<K>();
-                for (var entry : table) {
-                    if (entry != null) {
-                        keySet.add(entry.key);
-                    }
-                }
-                keys = new ArrayList<>(keySet);
-            }
 
             @Override
             public boolean hasNext() {
                 if (expectedModCount != modCount) {
                     throw new ConcurrentModificationException();
                 }
-                return !keys.isEmpty() && keys.size() > index;
+                while (index < table.length && table[index] == null) {
+                    index++;
+                }
+                return index < table.length;
             }
 
             @Override
@@ -109,7 +106,7 @@ public class SimpleMap<K, V> implements Map<K, V> {
                 if (!hasNext()) {
                     throw new NoSuchElementException();
                 }
-                return keys.get(index++);
+                return table[index++].key;
             }
         };
     }
