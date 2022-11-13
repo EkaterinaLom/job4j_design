@@ -16,14 +16,15 @@ public class SimpleMap<K, V> implements Map<K, V> {
     }
 
     private boolean putEntry(MapEntry<K, V> entry) {
-        boolean result = true;
-        var index = indexFor(hash(entry.key));
+        boolean result;
+        var index = indexFor(hash(hashCodeOf(entry.key)));
         if (table[index] != null) {
             result = false;
         } else {
             table[index] = entry;
             count++;
             modCount++;
+            result = true;
         }
         if (count == (int) (capasity * LOAD_FACTOR)) {
             expand();
@@ -32,13 +33,16 @@ public class SimpleMap<K, V> implements Map<K, V> {
         return result;
     }
 
-    private int hash(Object key) {
-        int h;
-        return key == null ? 0 : key.hashCode() ^ (key.hashCode() >>> capasity);
+    private int hashCodeOf(Object o) {
+        return o == null ? 0 : o.hashCode();
+    }
+
+    private int hash(int hashCode) {
+        return hashCode;
     }
 
     private int indexFor(int hash) {
-        return hash & capasity - 1;
+        return hash % capasity;
     }
 
     /**
@@ -59,23 +63,37 @@ public class SimpleMap<K, V> implements Map<K, V> {
 
     @Override
     public V get(K key) {
-        int index = indexFor(hash(key));
+        V result = null;
+        int index = indexFor(hash(hashCodeOf(key)));
         var entry = table[index];
-        return entry == null ? null : entry.value;
+        if (entry != null && keysEqual(key, entry.key)) {
+                result = entry.value;
+        }
+        return result;
     }
+
+    private boolean keysEqual(K key1, K key2) {
+        boolean result = false;
+        if (key1 == null && key2 == null) {
+            result = true;
+        } else if (key1 != null && key2 != null) {
+            result = key1.equals(key2);
+        }
+        return result;
+    }
+
 
     @Override
     public boolean remove(K key) {
-        boolean result;
-        int index = indexFor(hash(key));
+        boolean result = true;
+        int index = indexFor(hash(hashCodeOf(key)));
         if (table[index] == null) {
             result = false;
-        } else {
+        } else if (keysEqual(key, table[index].key)) {
             table[index] = null;
             count--;
             modCount++;
-            result = true;
-            }
+        }
         return result;
     }
 

@@ -113,8 +113,8 @@ class SimpleMapTest {
     @Test
     void whenCheckGetKeyNull() {
         map.put(null, "0000");
-        assertEquals("0000", map.get(null));
-        assertEquals(5, map.size());
+        assertThat(map.get(null)).isEqualTo("0000");
+        assertThat(map).hasSize(5);
     }
 
     @Test
@@ -140,14 +140,16 @@ class SimpleMapTest {
     }
 
     @Test
-    void whenCheckPutNullAndGetZero() {
-        assertTrue(map.put(null, "0000"));
-        assertEquals("0000", map.get(0));
+    void whenCheckGetZeroAndNull() {
+        SimpleMap<Integer, String> map = new SimpleMap<>();
+        assertThat(map.put(null, "0000")).isTrue();
+        assertThat(map.get(0)).isNull();
     }
 
     @Test
-    void whenCheckGetNullAndZero() {
-        assertTrue(map.put(0, "0000"));
-        assertEquals("0000", map.get(null));
+    void whenCheckGetNullAndZeroo() {
+        SimpleMap<Integer, String> map = new SimpleMap<>();
+        assertThat(map.put(0, "0")).isTrue();
+        assertThat(map.get(null)).isNull();
     }
 }
