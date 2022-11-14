@@ -61,7 +61,7 @@ public class SimpleMap<K, V> implements Map<K, V> {
         V result = null;
         int index = indexBasket(key);
         var entry = table[index];
-        if (entry != null && Objects.equals(key, entry.key)) {
+        if (entry != null && Objects.hashCode(key) == Objects.hashCode(entry.key) && Objects.equals(key, entry.key)) {
                 result = entry.value;
         }
         return result;
@@ -73,7 +73,7 @@ public class SimpleMap<K, V> implements Map<K, V> {
         int index = indexBasket(key);
         if (table[index] == null) {
             result = false;
-        } else if (table[index] != null && Objects.equals(key, table[index].key)) {
+        } else if (table[index] != null && Objects.hashCode(key) == Objects.hashCode(table[index].key) && Objects.equals(key, table[index].key)) {
             table[index] = null;
             count--;
             modCount++;
