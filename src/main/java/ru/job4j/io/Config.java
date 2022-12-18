@@ -22,7 +22,7 @@ public class Config {
                 if (!l.isEmpty() && !l.startsWith("#")) {
                     String[] lin = l.split("=", 2);
                     if (lin.length != 2 || lin[0].isBlank() || lin[1].isBlank()) {
-                        throw  new IllegalArgumentException("Pattern violation KEY = VALUE" + String.format(l));
+                        throw  new IllegalArgumentException(String.format("Pattern violation KEY = VALUE %s", l));
                     }
                     values.put(lin[0], lin[1]);
                 }
