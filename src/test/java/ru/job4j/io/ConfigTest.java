@@ -37,4 +37,18 @@ class ConfigTest {
         Config config = new Config(path);
         assertThrows(IllegalArgumentException.class, config::load);
     }
+
+    @Test
+    void whenPatternViolationNoValue() throws IllegalArgumentException {
+        String path = "./data/pair_mistake_no_value.properties";
+        Config config = new Config(path);
+        assertThrows(IllegalArgumentException.class, config::load);
+    }
+
+    @Test
+    void whenPatternViolationMissingAKey() throws IllegalArgumentException {
+        String path = "./data/pair_mistake_no_key.properties";
+        Config config = new Config(path);
+        assertThrows(IllegalArgumentException.class, config::load);
+    }
 }

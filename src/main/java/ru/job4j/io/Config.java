@@ -1,6 +1,7 @@
 package ru.job4j.io;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.io.BufferedReader;
@@ -22,7 +23,7 @@ public class Config {
                 if (!l.isEmpty() && !l.startsWith("#")) {
                     String[] lin = l.split("=", 2);
                     if (lin.length != 2 || lin[0].isBlank() || lin[1].isBlank()) {
-                        throw  new IllegalArgumentException();
+                        throw  new IllegalArgumentException("Pattern violation KEY = VALUE" + Arrays.toString(lin));
                     }
                     values.put(lin[0], lin[1]);
                 }
