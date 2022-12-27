@@ -22,13 +22,13 @@ public class Search {
     }
 
     public static void valid(String[] args) {
-        if (args.length == 0 || args.length != 2) {
-            throw new IllegalArgumentException("Arguments are null or invalid. Usage CLI_ARGUMENTS_TO_YOUR_APPLICATION.");
+        if (args.length != 2) {
+            throw new IllegalArgumentException("Arguments are invalid. Usage CLI_ARGUMENTS_TO_YOUR_APPLICATION.");
         }
         if (!Files.isDirectory(Path.of(args[0]))) {
             throw new IllegalArgumentException("Verify that the start folder is correct, check of args[0]");
         }
-        if (!args[1].equals(".js")) {
+        if (!args[1].startsWith(".") && !(args[1].length() > 1)) {
             throw new IllegalArgumentException("Extension not specified correctly, check of args[1]");
         }
     }
