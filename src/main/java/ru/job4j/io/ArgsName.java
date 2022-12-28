@@ -16,27 +16,22 @@ public class ArgsName {
 
     private void parse(String[] args) {
         for (String arg : args) {
-            valid(args);
+            valid(arg);
             String[] strings = arg.split("=", 2);
-            if (!(strings[0].length() > 1)) {
-                throw new IllegalArgumentException("missing key");
-            }
-            if (strings[1].length() == 0) {
-                throw new IllegalArgumentException("missing key value");
-            }
             values.put(strings[0].substring(1), strings[1]);
         }
     }
 
-    public void valid(String[] args) {
-        if (args.length == 0) {
-            throw new IllegalArgumentException("No arguments, enter arguments");
-        }
-        Arrays.stream(args).forEach(a -> {
-            if (!a.startsWith("-") || !a.contains("=")) {
+    public void valid(String arg) {
+            if (!arg.startsWith("-") || !arg.contains("=")) {
                 throw new IllegalArgumentException("Incorrect argument");
             }
-        });
+            if (arg.indexOf("=") == arg.length() - 1) {
+                throw new IllegalArgumentException("missing key value");
+            }
+            if (arg.startsWith("-=")) {
+                throw new IllegalArgumentException("missing key value");
+            }
     }
 
     public static ArgsName of(String[] args) {
