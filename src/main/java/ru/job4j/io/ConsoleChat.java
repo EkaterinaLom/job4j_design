@@ -24,19 +24,19 @@ public class ConsoleChat {
         var scanner = new Scanner(System.in);
         var log = new ArrayList<String>();
         var phrases = scanner.nextLine();
-        while (!phrases.equals(OUT)) {
+        var randomAnsw = answers.get(new Random().nextInt(answers.size()));
+        while (!OUT.equals(phrases)) {
             log.add(phrases);
-            if (phrases.equals(STOP)) {
+            if (STOP.equals(phrases)) {
                 phrases = scanner.nextLine();
-                while (!phrases.equals(CONTINUE)) {
+                while (!CONTINUE.equals(phrases)) {
                     log.add(phrases);
                     phrases = scanner.nextLine();
                 }
                 log.add(CONTINUE);
             } else {
-                var answ = answers.get(new Random().nextInt(answers.size()));
-                System.out.println(answ);
-                log.add(answ);
+                System.out.println(randomAnsw);
+                log.add(randomAnsw);
             }
             phrases = scanner.nextLine();
         }
