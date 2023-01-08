@@ -19,12 +19,12 @@ public class ConsoleChat {
         this.botAnswers = botAnswers;
     }
 
-    public void run() throws FileNotFoundException {
+    public void run() {
         var answers = readPhrases();
         var scanner = new Scanner(System.in);
         var log = new ArrayList<String>();
         var phrases = scanner.nextLine();
-        var randomAnsw = answers.get(new Random().nextInt(answers.size()));
+        var random = new Random();
         while (!OUT.equals(phrases)) {
             log.add(phrases);
             if (STOP.equals(phrases)) {
@@ -35,6 +35,7 @@ public class ConsoleChat {
                 }
                 log.add(CONTINUE);
             } else {
+                var randomAnsw = answers.get(random.nextInt(answers.size()));
                 System.out.println(randomAnsw);
                 log.add(randomAnsw);
             }
@@ -44,7 +45,7 @@ public class ConsoleChat {
         saveLog(log);
     }
 
-    private List<String> readPhrases() throws FileNotFoundException {
+    private List<String> readPhrases() {
         List<String> answer = new ArrayList<>();
         try (BufferedReader in = new BufferedReader(new FileReader(botAnswers))) {
             answer = in.lines().collect(Collectors.toList());
