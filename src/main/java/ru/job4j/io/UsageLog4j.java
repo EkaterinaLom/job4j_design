@@ -17,7 +17,7 @@ public class UsageLog4j {
         float favoritNumber = 3.14f;
         boolean result = true;
         double bactFavoritKefir = 786868768878543.56d;
-        LOG.debug("User info name : {}, age : {}, capSize : {}, areaHome : {}, nicknameFirst : {},"
+        LOG.warn("User info name : {}, age : {}, capSize : {}, areaHome : {}, nicknameFirst : {},"
                 + " livedDays : {}, favoritNumber : {}, result : {}, bactFavoritKefir : {}", name, age, capSize,
                 areaHome, nicknameFirst, livedDays, favoritNumber, result, bactFavoritKefir);
     }

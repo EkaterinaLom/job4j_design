@@ -1,0 +1,1 @@
+2023-01-13 20:45:49,603  WARN ru.job4j.io.UsageLog4j:main:20 - User info name : Petr Arsentev, age : 33, capSize : 61, areaHome : 1500, nicknameFirst : P, livedDays : 11979, favoritNumber : 3.14, result : true, bactFavoritKefir : 7.868687688785435E14
