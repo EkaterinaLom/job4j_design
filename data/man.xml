@@ -1,0 +1,14 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<man>
+    <filed name="id">21</filed>
+    <filed name="name">Vasiliy</filed>
+    <attribute type="Contact" name="contact">
+        <filed name="zipCode">123</filed>
+        <filed name="phone">+7 (994) 345-56-54</filed>
+    </attribute>
+    <childNames>
+        <childName>Egor</childName>
+        <childName>Mia</childName>
+    </childNames>
+    <filed name="exist">false</filed>
+</man>
