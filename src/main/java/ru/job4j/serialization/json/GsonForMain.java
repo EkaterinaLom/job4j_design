@@ -20,6 +20,26 @@ public class GsonForMain {
         this.exists = exists;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Contact getContact() {
+        return contact;
+    }
+
+    public String[] getChildName() {
+        return childName;
+    }
+
+    public boolean isExists() {
+        return exists;
+    }
+
     @Override
     public String toString() {
         return "GsonForMain {"
