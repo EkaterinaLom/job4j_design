@@ -16,7 +16,7 @@ public class MainSearch {
         var startFound = Paths.get(argsName.get("d"));
         if ("mask".equals(typeFound)) {
             foundPath = Search.search(startFound, path -> path.toFile().getName()
-                    .matches(argsName.get("n")
+                    .matches(argsName.get("n").replace(".", "[.]")
                     .replace("*", ".+")
                     .replace("?", ".")));
         }
