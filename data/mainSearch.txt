@@ -1,4 +1,3 @@
-/home/kate/Downloads/projects/job4j_design/mainSearch.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.iterator.ArrayItTest.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.assertj.BoxTest.txt
 /home/kate/Downloads/projects/job4j_design/data/log.txt
@@ -8,7 +7,6 @@
 /home/kate/Downloads/projects/job4j_design/data/even.txt
 /home/kate/Downloads/projects/job4j_design/data/result.txt
 /home/kate/Downloads/projects/job4j_design/logs/debug.txt
-/home/kate/Downloads/projects/job4j_design/mainSearch.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.iterator.ArrayItTest.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.assertj.BoxTest.txt
 /home/kate/Downloads/projects/job4j_design/data/log.txt
@@ -18,7 +16,6 @@
 /home/kate/Downloads/projects/job4j_design/data/even.txt
 /home/kate/Downloads/projects/job4j_design/data/result.txt
 /home/kate/Downloads/projects/job4j_design/logs/debug.txt
-/home/kate/Downloads/projects/job4j_design/mainSearch.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.iterator.ArrayItTest.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.assertj.BoxTest.txt
 /home/kate/Downloads/projects/job4j_design/data/log.txt
@@ -28,7 +25,6 @@
 /home/kate/Downloads/projects/job4j_design/data/even.txt
 /home/kate/Downloads/projects/job4j_design/data/result.txt
 /home/kate/Downloads/projects/job4j_design/logs/debug.txt
-/home/kate/Downloads/projects/job4j_design/mainSearch.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.iterator.ArrayItTest.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.assertj.BoxTest.txt
 /home/kate/Downloads/projects/job4j_design/data/log.txt
@@ -38,7 +34,6 @@
 /home/kate/Downloads/projects/job4j_design/data/even.txt
 /home/kate/Downloads/projects/job4j_design/data/result.txt
 /home/kate/Downloads/projects/job4j_design/logs/debug.txt
-/home/kate/Downloads/projects/job4j_design/mainSearch.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.iterator.ArrayItTest.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.assertj.BoxTest.txt
 /home/kate/Downloads/projects/job4j_design/data/log.txt
@@ -48,7 +43,6 @@
 /home/kate/Downloads/projects/job4j_design/data/even.txt
 /home/kate/Downloads/projects/job4j_design/data/result.txt
 /home/kate/Downloads/projects/job4j_design/logs/debug.txt
-/home/kate/Downloads/projects/job4j_design/mainSearch.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.iterator.ArrayItTest.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.assertj.BoxTest.txt
 /home/kate/Downloads/projects/job4j_design/data/log.txt
@@ -58,7 +52,6 @@
 /home/kate/Downloads/projects/job4j_design/data/even.txt
 /home/kate/Downloads/projects/job4j_design/data/result.txt
 /home/kate/Downloads/projects/job4j_design/logs/debug.txt
-/home/kate/Downloads/projects/job4j_design/mainSearch.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.iterator.ArrayItTest.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.assertj.BoxTest.txt
 /home/kate/Downloads/projects/job4j_design/data/log.txt
@@ -68,7 +61,6 @@
 /home/kate/Downloads/projects/job4j_design/data/even.txt
 /home/kate/Downloads/projects/job4j_design/data/result.txt
 /home/kate/Downloads/projects/job4j_design/logs/debug.txt
-/home/kate/Downloads/projects/job4j_design/mainSearch.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.iterator.ArrayItTest.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.assertj.BoxTest.txt
 /home/kate/Downloads/projects/job4j_design/data/log.txt
@@ -78,17 +70,6 @@
 /home/kate/Downloads/projects/job4j_design/data/even.txt
 /home/kate/Downloads/projects/job4j_design/data/result.txt
 /home/kate/Downloads/projects/job4j_design/logs/debug.txt
-/home/kate/Downloads/projects/job4j_design/mainSearch.txt
-/home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.iterator.ArrayItTest.txt
-/home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.assertj.BoxTest.txt
-/home/kate/Downloads/projects/job4j_design/data/log.txt
-/home/kate/Downloads/projects/job4j_design/data/input.txt
-/home/kate/Downloads/projects/job4j_design/data/dialogue.txt
-/home/kate/Downloads/projects/job4j_design/data/404.txt
-/home/kate/Downloads/projects/job4j_design/data/even.txt
-/home/kate/Downloads/projects/job4j_design/data/result.txt
-/home/kate/Downloads/projects/job4j_design/logs/debug.txt
-/home/kate/Downloads/projects/job4j_design/mainSearch.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.iterator.ArrayItTest.txt
 /home/kate/Downloads/projects/job4j_design/target/surefire-reports/ru.job4j.assertj.BoxTest.txt
 /home/kate/Downloads/projects/job4j_design/data/log.txt
