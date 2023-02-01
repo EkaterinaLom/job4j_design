@@ -1,23 +1,24 @@
-create table coments (
+create table itemes (
 	id serial primary key,
 	name text
+);
+
+create table coments (
+	id serial primary key,
+	name text,
+	itemes_id int references itemes(id)
 );
 
 create table attached (
 	id serial primary key,
-	name text
-);
-
-create table itemes (
-	id serial primary key,
 	name text,
-	coments_id int references coments(id),
-	attached_id int references attached(id)
+	itemes_id int references itemes(id)
 );
 
 create table users (
 	id serial primary key,
-	name text
+	name text,
+	itemes_id int references itemes(id)
 );
 
 create table roles (
