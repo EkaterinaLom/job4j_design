@@ -28,7 +28,7 @@ create table roles_rules (
 create table users (
 	id serial primary key,
 	name text,
-	roles_id int references roles(id),
+	roles_id int references roles(id)
 );
 
 create table itemes (
