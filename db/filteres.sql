@@ -12,9 +12,24 @@ create table product(
 );
 
 insert into tipe(name) values ('Сыр'), ('Молоко'), ('Овощи'), ('Фрукты');
-insert into product(name, expired_date, price, tipe_id) values ('Сыр Моцарелла', 'true', 550, 1), ('Сыр плавленный', 'false', 35, 1), ('Молоко', 'false', 90, 2), ('Морковь мытая', 'false', 55, 3), ('Манго мороженое', 'false', 45, 4), ('Авокадо мороженое', 'true', 65, 4);
-insert into product(name, expired_date, price, tipe_id) values ('Сыр Гауда', 'false', 750, 1), ('Сыр Качотта', 'false', 1500, 1), ('Сыр Тильзиттер', 'false', 890, 1), ('Сыр Маасдам', 'false', 1550, 1), ('Сыр Адыгейский', 'false', 450, 1), ('Сыр из козьего молока', 'true', 2650, 1);
-insert into product(name, expired_date, price, tipe_id) values ('Сыр Домашний', 'false', 650, 1), ('Сыр Качотта с пажитником', 'false', 2500, 1), ('Молоко топленое', 'false', 160, 2), ('Огурцы', 'false', 150, 3), ('Помело', 'false', 150, 4), ('Помидоры', 'true', 150, 3);
+insert into product(name, expired_date, price, tipe_id) values ('Сыр Моцарелла', 'true', 550, 1);
+insert into product(name, expired_date, price, tipe_id) values ('Сыр Гауда', 'false', 750, 1);
+insert into product(name, expired_date, price, tipe_id) values ('Сыр Домашний', 'false', 650, 1); 
+insert into product(name, expired_date, price, tipe_id) values ('Сыр плавленный', 'false', 35, 1);
+insert into product(name, expired_date, price, tipe_id) values ('Молоко', 'false', 90, 2);
+insert into product(name, expired_date, price, tipe_id) values ('Авокадо мороженое', 'true', 65, 4);
+insert into product(name, expired_date, price, tipe_id) values ('Манго мороженое', 'false', 45, 4);
+insert into product(name, expired_date, price, tipe_id) values ('Сыр Качотта', 'false', 1500, 1);
+insert into product(name, expired_date, price, tipe_id) values ('Сыр Тильзиттер', 'false', 890, 1);
+insert into product(name, expired_date, price, tipe_id) values ('Сыр Адыгейский', 'false', 450, 1);
+insert into product(name, expired_date, price, tipe_id) values ('Помело', 'false', 150, 4);
+insert into product(name, expired_date, price, tipe_id) values ('Сыр из козьего молока', 'true', 2650, 1);
+insert into product(name, expired_date, price, tipe_id) values ('Сыр Маасдам', 'false', 1550, 1);
+insert into product(name, expired_date, price, tipe_id) values ('Сыр Качотта с пажитником', 'false', 2500, 1);
+insert into product(name, expired_date, price, tipe_id) values ('Молоко топленое', 'false', 160, 2);
+insert into product(name, expired_date, price, tipe_id) values ('Морковь мытая', 'false', 55, 3);
+insert into product(name, expired_date, price, tipe_id) values ('Огурцы', 'false', 150, 3);
+insert into product(name, expired_date, price, tipe_id) values ('Помидоры', 'true', 150, 3);
 
 select p.name
 from product p join tipe t
