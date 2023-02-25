@@ -48,6 +48,6 @@ public class Config {
     }
 
     public static void main(String[] args) {
-        System.out.println(new Config("app.properties"));
+        System.out.println(new Config("/home/kate/Downloads/projects/job4j_design/data/app.properties"));
     }
 }
